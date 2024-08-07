@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  position: fixed;
+  left: 50%;
 }
 
 .player img {
@@ -110,5 +112,8 @@
   }
   .player-container{
     width: 35%;
+  }
+  .player{
+    left: 40%;
   }
 }
