@@ -73,7 +73,7 @@ const App = () => {
         </div>
         <div className='songs-track-container'>
 
-      <SongList songs={filtersData} playSong={playSong} handleSearch={handleSearch}/>
+      <SongList songs={filtersData} playSong={playSong} handleSearch={handleSearch} currentsong = {currentSongIndex}/>
       <Player 
         song={currentSongIndex} 
         isPlaying={isPlaying} 

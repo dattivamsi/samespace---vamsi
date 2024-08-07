@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SongList.css";
 
-const SongList = ({ songs, playSong, handleSearch }) => {
+const SongList = ({ songs, playSong, handleSearch, currentsong }) => {
   const [activeList,setActiveList] = useState("ForYou")
   const handleSongClick = (song) => {
     playSong(song);
@@ -10,7 +10,7 @@ const SongList = ({ songs, playSong, handleSearch }) => {
   const handleClick = (track) =>{
     setActiveList(track)
   }
-  console.log(activeList);
+  console.log(playSong);
   
 
   return (
@@ -29,6 +29,7 @@ const SongList = ({ songs, playSong, handleSearch }) => {
       </div>
       <ul>
         {songs.map((song) => (
+          <div className={currentsong?.id === song?.id ? "song_cover":""}>
           <li key={song.id} onClick={() => handleSongClick(song)}>
             <img
               src={`https://cms.samespace.com/assets/${song.cover}`}
@@ -39,6 +40,7 @@ const SongList = ({ songs, playSong, handleSearch }) => {
               <p className="artist-name">{song?.artist}</p>
             </div>
           </li>
+          </div>
         ))}
       </ul>
     </div>
